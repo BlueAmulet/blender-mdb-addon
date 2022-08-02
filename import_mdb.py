@@ -430,7 +430,7 @@ def load(operator, context, filepath='', **kwargs):
                     textures[filename] = image
                     # Why is Straight being treated as Premultiplied by cycles?
                     image.alpha_mode = 'CHANNEL_PACKED'
-                    if 'albedo' not in txr_map and 'diffuse' not in txr_map:
+                    if 'diffuse' not in txr_map:
                         image.colorspace_settings.name = 'Non-Color'
                     if txr_map == 'normal' or txr_map == 'damage_normal':
                         np_pxl = np.empty(len(image.pixels), dtype=np.float32)
